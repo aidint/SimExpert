@@ -25,22 +25,12 @@ namespace SimExpert
             return a + (b - a) * Random.NextDouble();
         }
 
-        public TimeSpan RandUniform(TimeSpan a, TimeSpan b)
-        {
-            return TimeSpan.FromSeconds(RandUniform(a.TotalSeconds, b.TotalSeconds));
-        }
-
         public double RandTriangular(double low, double high)
         {
             var u = Random.NextDouble();
             if (u > 0.5)
                 return high + (low - high) * Math.Sqrt(((1.0 - u) / 2));
             return low + (high - low) * Math.Sqrt(u / 2);
-        }
-
-        public TimeSpan RandTriangular(TimeSpan low, TimeSpan high)
-        {
-            return TimeSpan.FromSeconds(RandTriangular(low.TotalSeconds, high.TotalSeconds));
         }
 
         public double RandTriangular(double low, double high, double mode)
@@ -52,21 +42,9 @@ namespace SimExpert
             return low + (high - low) * Math.Sqrt(u * c);
         }
 
-        public TimeSpan RandTriangular(TimeSpan low, TimeSpan high, TimeSpan mode)
-        {
-            return TimeSpan.FromSeconds(RandTriangular(low.TotalSeconds, high.TotalSeconds, mode.TotalSeconds));
-        }
-
-       
         public double RandExponential(double mean)
         {
             return -Math.Log(1 - Random.NextDouble()) * mean;
-        }
-
-       
-        public TimeSpan RandExponential(TimeSpan mean)
-        {
-            return TimeSpan.FromSeconds(RandExponential(mean.TotalSeconds));
         }
 
         public double RandNormal(double mu, double sigma)
@@ -82,11 +60,6 @@ namespace SimExpert
             return mu + z * sigma;
         }
 
-        public TimeSpan RandNormal(TimeSpan mu, TimeSpan sigma)
-        {
-            return TimeSpan.FromSeconds(RandNormal(mu.TotalSeconds, sigma.TotalSeconds));
-        }
-
         public double RandNormalPositive(double mu, double sigma)
         {
             double val;
@@ -95,11 +68,6 @@ namespace SimExpert
                 val = RandNormal(mu, sigma);
             } while (val <= 0);
             return val;
-        }
-
-        public TimeSpan RandNormalPositive(TimeSpan mu, TimeSpan sigma)
-        {
-            return TimeSpan.FromSeconds(RandNormalPositive(mu.TotalSeconds, sigma.TotalSeconds));
         }
 
         public double RandNormalNegative(double mu, double sigma)
@@ -112,19 +80,9 @@ namespace SimExpert
             return val;
         }
 
-        public TimeSpan RandNormalNegative(TimeSpan mu, TimeSpan sigma)
-        {
-            return TimeSpan.FromSeconds(RandNormalNegative(mu.TotalSeconds, sigma.TotalSeconds));
-        }
-
         public double RandLogNormal(double mu, double sigma)
         {
             return Math.Exp(RandNormal(mu, sigma));
-        }
-
-        public TimeSpan RandLogNormal(TimeSpan mu, TimeSpan sigma)
-        {
-            return TimeSpan.FromSeconds(RandLogNormal(mu.TotalSeconds, sigma.TotalSeconds));
         }
 
         public double RandCauchy(double x0, double gamma)
@@ -132,35 +90,26 @@ namespace SimExpert
             return x0 + gamma * Math.Tan(Math.PI * (Random.NextDouble() - 0.5));
         }
 
-        public TimeSpan RandCauchy(TimeSpan x0, TimeSpan gamma)
-        {
-            return TimeSpan.FromSeconds(RandCauchy(x0.TotalSeconds, gamma.TotalSeconds));
-        }
-
         public double RandWeibull(double alpha, double beta)
         {
             return alpha * Math.Pow(-Math.Log(1 - Random.NextDouble()), 1 / beta);
         }
 
-        public TimeSpan RandWeibull(TimeSpan mu, TimeSpan sigma)
-        {
-            return TimeSpan.FromSeconds(RandWeibull(mu.TotalSeconds, sigma.TotalSeconds));
-        }
-
-        public int RandDiscrete(List<int> V, List<double> P)
+        public double RandDiscrete(double[] V, double[] P)
         {
             double r = RandUniform(0, 1);
-            List<double> prob = new List<double>();
+            double[] prob = new double[V.Length];
             double result = 0;
-            foreach(double d in P){
-                prob.Add(result);
-                result += d; 
-            }
-            for (int i = 1; i < P.Count; i++)
+            for (int i = 0; i < prob.Length; i++ )
             {
-                if (r > prob[i - 1] && r < prob[i]) return V[i - 1];
+                prob[i]=result;
+                result += P[i];
             }
-            return V.Last();
+            for (int i = 1; i < P.Length; i++)
+            {
+                if (r < prob[i] && r > prob[i - 1]) return V[i - 1];
+            }
+            return V[V.Length];
         }
         
     }
