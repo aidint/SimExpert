@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Dispose : Actor
+    class Environment
     {
-        public Dispose(Environment env) : base(env) { }
-        public override void Process(Event.Type T, Entity E)
-        {
+        public TimeSpan System_Time { get; set; }
 
+        public SimActor Sim_Actors { get; set; }
+        public Environment()
+        {
         }
     }
 }

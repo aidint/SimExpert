@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimExpert.SimExpertCore.Actors
+namespace SimExpert
 {
     class Decide : Actor
     {
-        public Condition.Condition Cond { get; set;}
-        public override void Process(EventEx.Type T, Entity E)
+        public Decide(Environment env) : base(env) { }
+        public Condition Cond { get; set;}
+        public override void Process(Event.Type T, Entity E)
         {
 
         }

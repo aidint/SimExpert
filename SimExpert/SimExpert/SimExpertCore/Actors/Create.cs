@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimExpert.SimExpertCore.Actors
+namespace SimExpert
 {
     class Create : Actor
     {
+        public Create(Environment env) : base(env) { }
         public Distribution Create_Distribution { get; set; }
-        public override void Process(EventEx.Type T, Entity E)
+        public override void Process(Event.Type T, Entity E)
         {
 
         }

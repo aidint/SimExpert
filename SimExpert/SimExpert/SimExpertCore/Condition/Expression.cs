@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace SimExpert.SimExpertCore.Actors
+namespace SimExpert
 {
     class Expression
     {

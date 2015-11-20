@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SimExpert.SimExpertCore
+namespace SimExpert
 {
-    class EventEx
+    class Event
     {
-        public Enviroment Env { get; set; }
+        public Environment Env { get; set; }
         public enum Type
         {
             A,//Arrival
@@ -30,7 +30,7 @@ namespace SimExpert.SimExpertCore
         private Entity E;//Entity assigned to Event
         private Actor A;//Actor assigned to Event
 
-        public EventEx(Type T, TimeSpan Time,  Actor A,Enviroment Env,Entity E = null)//Constructor // E = Null for Arrival Event
+        public Event(Type T, TimeSpan Time,  Actor A,Environment Env,Entity E = null)//Constructor // E = Null for Arrival Event
         {
             this.T = T;
             this.time = Time;
