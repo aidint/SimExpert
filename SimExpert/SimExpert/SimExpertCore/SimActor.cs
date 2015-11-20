@@ -8,7 +8,7 @@ namespace SimExpert
     class SimActor
     {
         public Create Sim_Create { get; set; }
-        public Dispose Sim_Create { get; set; }
+        public Dispose Sim_Dispose { get; set; }
         public List<Actor> Sim_Actors { get; set; }
     }
 }

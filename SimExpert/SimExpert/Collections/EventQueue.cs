@@ -72,7 +72,7 @@ namespace SimExpert
 #if NET_VERSION_4_5
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
 #endif
-    public EventQueueNode Enqueue(DateTime priority, Event @event) {
+    public EventQueueNode @Enqueue(DateTime priority, Event @event) {
       var node = new EventQueueNode {
         Priority = priority,
         Event = @event,

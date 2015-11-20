@@ -8,7 +8,7 @@ namespace SimExpert
     /// </summary>
     public DateTime Priority { get; set; }
 
-    public Event Event { get; set; }
+    public Event @Event { get; set; }
 
     /// <summary>
     /// <b>Used by the priority queue - do not edit this value.</b>

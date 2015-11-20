@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Event
+    public class Event
     {
         public Environment Env { get; set; }
         public enum Type
