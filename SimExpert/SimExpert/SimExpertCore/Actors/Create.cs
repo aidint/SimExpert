@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Create : Actor
+    public class Create : Actor
     {
         public Create(Environment env) : base(env) { }
         public Distribution Create_Distribution { get; set; }

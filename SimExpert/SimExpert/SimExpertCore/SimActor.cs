@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SimExpert
 {
-    class SimActor
+    public class SimActor
     {
         public Create Sim_Create { get; set; }
         public Dispose Sim_Dispose { get; set; }

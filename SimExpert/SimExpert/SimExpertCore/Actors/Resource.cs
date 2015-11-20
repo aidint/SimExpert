@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Resource : Actor
+    public class Resource : Actor
     {
         public Resource(Environment env) : base(env) { }
         public int Capacity { get; set; }

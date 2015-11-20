@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Decide : Actor
+    public class Decide : Actor
     {
         public Decide(Environment env) : base(env) { }
         public Condition Cond { get; set;}

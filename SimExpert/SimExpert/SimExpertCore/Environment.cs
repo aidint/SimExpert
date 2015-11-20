@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Environment
+    public class Environment
     {
         public TimeSpan System_Time { get; set; }
 

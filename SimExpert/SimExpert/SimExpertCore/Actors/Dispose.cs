@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Dispose : Actor
+    public class Dispose : Actor
     {
         public Dispose(Environment env) : base(env) { }
         public override void Process(Event.Type T, Entity E)
