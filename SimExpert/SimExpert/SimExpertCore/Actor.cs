@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace SimExpert.SimExpertCore
 {
-    abstract class Actor
+    public abstract class Actor
     {
         public bool Is_Finished { get; set; }
         public bool Is_Busy { get; set; }
         public bool Is_Idle { get { return !Is_Busy;} set{ Is_Busy = !value;} }
-        public void Process(EventEx.Type T, Entity E);
+        public abstract void Process(EventEx.Type T, Entity E);
 
     }
 }

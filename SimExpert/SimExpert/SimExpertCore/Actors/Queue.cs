@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace SimExpert.SimExpertCore.Actors
 {
-    class Queue
+    class Queue : Actor
     {
+        public int Capacity { get; set; }
+        public int Queue_Length { get; set; }
+        public override void Process(EventEx.Type T, Entity E)
+        {
+
+        }
     }
 }

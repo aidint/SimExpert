@@ -51,8 +51,11 @@
     <Compile Include="SimExpertCore\Actors\Create.cs" />
     <Compile Include="SimExpertCore\Actors\Decide.cs" />
     <Compile Include="SimExpertCore\Actors\Dispose.cs" />
+    <Compile Include="SimExpertCore\Condition\Condition.cs" />
+    <Compile Include="SimExpertCore\Condition\Expression.cs" />
     <Compile Include="SimExpertCore\Actors\Queue.cs" />
     <Compile Include="SimExpertCore\Actors\Resource.cs" />
+    <Compile Include="SimExpertCore\Distribution.cs" />
     <Compile Include="SimExpertCore\Entity.cs" />
     <Compile Include="SimExpertCore\EventEx.cs" />
   </ItemGroup>

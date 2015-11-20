@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace SimExpert.SimExpertCore.Actors
 {
-    class Decide
+    class Decide : Actor
     {
+        public Condition.Condition Cond { get; set;}
+        public override void Process(EventEx.Type T, Entity E)
+        {
+
+        }
     }
 }

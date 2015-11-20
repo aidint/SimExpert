@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace SimExpert.SimExpertCore.Actors
 {
-    class Create
+    class Create : Actor
     {
+        public Distribution Create_Distribution { get; set; }
+        public override void Process(EventEx.Type T, Entity E)
+        {
+
+        }
     }
 }
