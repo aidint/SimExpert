@@ -24,7 +24,7 @@ namespace SimExpert
         private TimeSpan time;//Event Time
         public TimeSpan Time
         {
-            get { return time; }//
+            get { return time; }
             set { time = value; }
         }
         private Entity E;//Entity assigned to Event
