@@ -59,6 +59,7 @@
     <Compile Include="SimExpertCore\Entity.cs" />
     <Compile Include="SimExpertCore\Enviroment.cs" />
     <Compile Include="SimExpertCore\EventEx.cs" />
+    <Compile Include="SimExpertCore\SimActor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

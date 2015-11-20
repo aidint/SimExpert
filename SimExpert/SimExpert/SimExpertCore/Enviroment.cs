@@ -8,7 +8,10 @@ namespace SimExpert.SimExpertCore
 {
     class Enviroment
     {
-        private TimeSpan system_Time = new TimeSpan(0, 0, 0);
-        public TimeSpan System_Time { get { return system_Time; } set { system_Time = value;} }
+        private TimeSpan system_Time = new TimeSpan(0);
+        public TimeSpan System_Time { get; set; }
+
+        private SimActor Sim_Actors { get; set; }
+        public Enviroment(TimeSpan System_Time,SimActor Sim_Actors,)
     }
 }

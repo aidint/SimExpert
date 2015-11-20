@@ -30,7 +30,7 @@ namespace SimExpert.SimExpertCore
         private Entity E;//Entity assigned to Event
         private Actor A;//Actor assigned to Event
 
-        public EventEx(Type T, TimeSpan Time,  Actor A,Enviroment Env,Entity E = null)//Constructor
+        public EventEx(Type T, TimeSpan Time,  Actor A,Enviroment Env,Entity E = null)//Constructor // E = Null for Arrival Event
         {
             this.T = T;
             this.time = Time;
@@ -44,8 +44,8 @@ namespace SimExpert.SimExpertCore
         }
         public void Run()//Trigger Event
         {
-            A.Process(T, E);
-            Env.System_Time.Add(Time);
+            A.Process(T, E);//Call the correct Process
+            Env.System_Time.Add(Time); //Add Event Time to System Time
         }
     }
 }
