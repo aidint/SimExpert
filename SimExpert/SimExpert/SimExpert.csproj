@@ -41,11 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RandNumberDistribution.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Random\FastRandom.cs" />
     <Compile Include="Random\IRandom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RandNumberDistribution.cs" />
     <Compile Include="Random\SystemRandom.cs" />
     <Compile Include="SimExpertCore\Actor.cs" />
     <Compile Include="SimExpertCore\Actors\Create.cs" />
