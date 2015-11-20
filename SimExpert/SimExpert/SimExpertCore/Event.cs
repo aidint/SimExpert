@@ -45,7 +45,7 @@ namespace SimExpert
         public void Run()//Trigger Event
         {
             A.Process(T, E);//Call the correct Process
-            Env.System_Time.Add(Time); //Add Event Time to System Time
+            Env.System_Time = Env.System_Time.Add(Time); //Add Event Time to System Time
         }
     }
 }

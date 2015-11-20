@@ -7,8 +7,10 @@ namespace SimExpert
 {
     public class SimActor
     {
-        public Create Sim_Create { get; set; }
-        public Dispose Sim_Dispose { get; set; }
-        public List<Actor> Sim_Actors { get; set; }
+        public Dictionary<Int64,Actor> Sim_Actors { get; set; }
+        public Actor getActor(Int64 Id)
+        {
+            return Sim_Actors[Id];
+        }
     }
 }

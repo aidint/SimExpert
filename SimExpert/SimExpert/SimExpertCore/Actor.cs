@@ -12,6 +12,7 @@ namespace SimExpert
         public bool Is_Busy { get; set; }
         public bool Is_Idle { get { return !Is_Busy;} set{ Is_Busy = !value;} }
         public Environment Env { get; set; }
+        public Int64 Next_AID { get; set; }
         protected Actor(Environment Env)
         {
             this.Env = Env;
