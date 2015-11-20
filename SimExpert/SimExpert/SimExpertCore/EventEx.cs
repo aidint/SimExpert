@@ -53,7 +53,7 @@ namespace SimExpert.SimExpertCore
                     break;
                 case Type.S:
                     break;
-                case default:
+                default:
                     break;
             }
         }
