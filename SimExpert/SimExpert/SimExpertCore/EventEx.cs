@@ -8,6 +8,7 @@ namespace SimExpert.SimExpertCore
 {
     class EventEx
     {
+        public Enviroment Env { get; set; }
         public enum Type
         {
             A,//Arrival
@@ -16,46 +17,35 @@ namespace SimExpert.SimExpertCore
             D,//Depart
             C,//Condition
             IN,//Enqueue
-            OUT//Dequeue
+            OUT,//Dequeue
+            F//Fail
         };
-        private Type T;
-        private TimeSpan time;
+        private Type T;//Event Type
+        private TimeSpan time;//Event Time
         public TimeSpan Time
         {
             get { return time; }
             set { time = value; }
         }
-        private Entity E;
-        private Actor A;
+        private Entity E;//Entity assigned to Event
+        private Actor A;//Actor assigned to Event
 
-        public EventEx(Type T, TimeSpan Time, Entity E, Actor A)
+        public EventEx(Type T, TimeSpan Time,  Actor A,Enviroment Env,Entity E = null)//Constructor
         {
             this.T = T;
             this.time = Time;
             this.E = E;
-            this.A = A;
-        }
-        public void Run()
-        {
-            switch (T)
+            if (E == null)
             {
-                case Type.A:
-                    break;
-                case Type.C:
-                    break;
-                case Type.D:
-                    break;
-                case Type.IN:
-                    break;
-                case Type.OUT:
-                    break;
-                case Type.R:
-                    break;
-                case Type.S:
-                    break;
-                default:
-                    break;
+                this.E = new Entity();
             }
+            this.A = A;
+            this.Env = Env;
+        }
+        public void Run()//Trigger Event
+        {
+            A.Process(T, E);
+            Env.System_Time.Add(Time);
         }
     }
 }

@@ -57,6 +57,7 @@
     <Compile Include="SimExpertCore\Actors\Resource.cs" />
     <Compile Include="SimExpertCore\Distribution.cs" />
     <Compile Include="SimExpertCore\Entity.cs" />
+    <Compile Include="SimExpertCore\Enviroment.cs" />
     <Compile Include="SimExpertCore\EventEx.cs" />
   </ItemGroup>
   <ItemGroup>
