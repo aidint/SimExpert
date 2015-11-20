@@ -1,1 +1,6 @@
+D:\Files\Programming\University Projects\SimExpert\SimExpert\SimExpert\SimExpert\obj\Debug\SimExpert.csprojResolveAssemblyReference.cache
 D:\Files\Programming\University Projects\SimExpert\SimExpert\SimExpert\SimExpert\bin\Debug\SimExpert.exe.config
+D:\Files\Programming\University Projects\SimExpert\SimExpert\SimExpert\SimExpert\bin\Debug\SimExpert.exe
+D:\Files\Programming\University Projects\SimExpert\SimExpert\SimExpert\SimExpert\bin\Debug\SimExpert.pdb
+D:\Files\Programming\University Projects\SimExpert\SimExpert\SimExpert\SimExpert\obj\Debug\SimExpert.exe
+D:\Files\Programming\University Projects\SimExpert\SimExpert\SimExpert\SimExpert\obj\Debug\SimExpert.pdb
