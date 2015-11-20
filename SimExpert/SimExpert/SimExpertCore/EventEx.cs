@@ -8,7 +8,7 @@ namespace SimExpert.SimExpertCore
 {
     class EventEx
     {
-        enum Type
+        public enum Type
         {
             A,//Arrival
             S,//Seize
