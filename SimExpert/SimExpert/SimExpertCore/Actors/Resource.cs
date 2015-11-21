@@ -16,6 +16,7 @@ namespace SimExpert
             this.Statistics.TotalServiceTime = 0;
             this.RQueue = Queue == null ? new Queue(env, -100, 0) : Queue;
             this.Actor_Type = Actor.AType.Resource;
+            this.Env.resource_statistics.Add(this.Statistics);
             
         }
         public ResourceStatistic Statistics { get; set; }
