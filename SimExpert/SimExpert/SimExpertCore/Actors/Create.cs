@@ -11,7 +11,9 @@ namespace SimExpert
         public int Number_Of_Entities { get; set; }
         public Distribution Create_Distribution { get; set; }
         private int current_number = 2;
-        public Create(Environment env,Int64 Id, int Num, Distribution dist) : base(env,Id) { this.Number_Of_Entities = Num;
+        public Create(Environment env,Int64 Id, int Num, Distribution dist) : base(env,Id) {
+            this.Number_Of_Entities = Num;
+            this.Actor_Type = Actor.AType.Create;
             this.Create_Distribution = dist;
             Env.System_Create.Add(this);
         }

@@ -8,7 +8,10 @@ namespace SimExpert
 {
     public class Decide : Actor
     {
-        public Decide(Environment env,Int64 Id) : base(env,Id) { }
+        public Decide(Environment env,Int64 Id) : base(env,Id) 
+        {
+            this.Actor_Type = Actor.AType.Decide;
+        }
         private List<Condition> _Conds = new List<Condition>();
         public List<Condition> Conds { get {return _Conds;} private set{ _Conds = value;}}
         public Dictionary<int, Int64> _CondToTarget = new Dictionary<int,long>();

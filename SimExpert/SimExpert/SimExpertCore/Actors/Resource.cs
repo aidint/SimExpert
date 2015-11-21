@@ -8,10 +8,12 @@ namespace SimExpert
 {
     public class Resource : Actor
     {
-        public Resource(Environment env, Int64 Id, int Capacity, Distribution dist,Queue Queue = null) : base(env, Id) { this.Capacity = Capacity;
+        public Resource(Environment env, Int64 Id, int Capacity, Distribution dist,Queue Queue = null) : base(env, Id) { 
+            this.Capacity = Capacity;
             this.Activity_Distribution = dist;
             this.RQueue = Queue == null ? new Queue(env, -100, 0) : Queue;
             RQueue.Next_AID.Add("first", this.AID);
+            this.Actor_Type = Actor.AType.Resource;
             
         }
         public int Capacity { get; set; }

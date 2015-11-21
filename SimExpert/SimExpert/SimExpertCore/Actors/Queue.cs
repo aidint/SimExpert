@@ -8,7 +8,12 @@ namespace SimExpert
 {
     public class Queue : Actor
     {
-        public Queue(Environment env, Int64 Id,int Capacity=10000) : base(env, Id) { AQueue = new Queue<Entity>(); this.Capacity = Capacity; }
+        public Queue(Environment env, Int64 Id,int Capacity=10000) : base(env, Id) {
+            AQueue = new Queue<Entity>();
+            this.Capacity = Capacity;
+            this.Actor_Type = Actor.AType.Queue;
+            
+        }
         public int Capacity { get; set; }
         public int Queue_Length { get { return AQueue.Count;} }
         public Entity Head_Entity { get { return AQueue.First(); } }
@@ -33,7 +38,7 @@ namespace SimExpert
             else
             {
                 Entity e = AQueue.First();
-                e.Delay = Env.System_Time.Subtract(e.Last_Queue_Time_In);
+                e.Delay += Env.System_Time.Subtract(e.Last_Queue_Time_In);
                 Actor NextActor = Env.Sim_Actors[Next_AID.First().Value];
                 NextActor.GenerateEvent(e);
             }
