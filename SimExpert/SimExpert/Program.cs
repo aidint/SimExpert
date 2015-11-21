@@ -22,10 +22,13 @@ namespace SimExpert
             //Samples.SimpleSharedQueue ssd = new Samples.SimpleSharedQueue();
             //ssd.run();
             //Able and Baker
-            Samples.AbleBaker ab = new Samples.AbleBaker();
-            ab.run();
+            //Samples.AbleBaker ab = new Samples.AbleBaker();
+            //ab.run();
             ///////
-            //
+            //Chain Maybe
+            Samples.Chain chain = new Samples.Chain();
+            chain.run();
+            ///////
             Console.Read();
             //
         }
