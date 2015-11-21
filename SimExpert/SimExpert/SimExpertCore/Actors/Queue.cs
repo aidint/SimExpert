@@ -8,9 +8,11 @@ namespace SimExpert
 {
     public class Queue : Actor
     {
-        public Queue(Environment env, Int64 Id) : base(env, Id) { AQueue = new Queue<Entity>(); this.Capacity = 10000; this.Queue_Length = 0; }
+        public Queue(Environment env, Int64 Id,int Capacity=10000) : base(env, Id) { AQueue = new Queue<Entity>(); this.Capacity = Capacity; }
         public int Capacity { get; set; }
-        public int Queue_Length { get; set; }
+        public int Queue_Length { get { return AQueue.Count;} }
+        public Entity Head_Entity { get { return AQueue.First(); } }
+        public bool Is_Empty { get { return Queue_Length == 0 ? true:false;} }
         public System.Collections.Generic.Queue<Entity> AQueue { get; set; }
         public override void Process(Event.Type T, Entity E)
         {
@@ -20,6 +22,7 @@ namespace SimExpert
                 {
                     E.Last_Queue_Time_In = Env.System_Time;
                     AQueue.Enqueue(E);
+                    Console.WriteLine(string.Format("Entity {0} enqueued at {1}", E.Id, Env.System_Time.ToString()));
                 }
                 else
                 {
@@ -29,10 +32,10 @@ namespace SimExpert
             }
             else
             {
-                Entity e = AQueue.Dequeue();
+                Entity e = AQueue.First();
                 e.Delay = Env.System_Time.Subtract(e.Last_Queue_Time_In);
                 Actor NextActor = Env.Sim_Actors[Next_AID.First().Value];
-                NextActor.GenerateEvent(E);
+                NextActor.GenerateEvent(e);
             }
         }
         public override void GenerateEvent(Entity E)

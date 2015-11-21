@@ -22,7 +22,7 @@ namespace SimExpert
             Create c = new Create(env,0,20,dist);
 
             Dispose d = new Dispose(env,1);
-            Queue q = new Queue(env, 3);
+            Queue q = new Queue(env,3);
             q.Capacity = 10;
             Resource r = new Resource(env, 2,1,dist1,q);
 
