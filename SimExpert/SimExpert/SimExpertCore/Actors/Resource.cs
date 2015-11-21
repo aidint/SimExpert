@@ -11,11 +11,15 @@ namespace SimExpert
         public Resource(Environment env, Int64 Id, int Capacity, Distribution dist,Queue Queue = null) : base(env, Id) { 
             this.Capacity = Capacity;
             this.Activity_Distribution = dist;
+            this.Statistics = new ResourceStatistic();
+            this.Statistics.ResourceId = this.AID;
+            this.Statistics.TotalServiceTime = 0;
             this.RQueue = Queue == null ? new Queue(env, -100, 0) : Queue;
             RQueue.Next_AID.Add("first", this.AID);
             this.Actor_Type = Actor.AType.Resource;
             
         }
+        public ResourceStatistic Statistics { get; set; }
         public int Capacity { get; set; }
         public int Seized { get; set; }
 
@@ -47,6 +51,7 @@ namespace SimExpert
                 TimeSpan Activity_Time = Activity_Distribution.Next_Time();
                 E.Last_Resource_Time_In = Env.System_Time;
                 E.statistic.Add_Resource_Delay(this.AID, Activity_Time.TotalSeconds);
+                this.Statistics.TotalServiceTime += Activity_Time.TotalSeconds;
                 Env.FEL.Enqueue(Env.System_Time + Activity_Time, new Event(Event.Type.R, Env.System_Time + Activity_Time, this, Env, E));
                 if (RQueue.Queue_Length > 0) 
                 { 

@@ -20,6 +20,7 @@ namespace SimExpert
         public List<Int64> ActorsStateChanges = new List<long>();
         public Dictionary<Int64, HashSet<Int64>> ActorStateToActors = new Dictionary<long,HashSet<long>>();
         public List<StatisticObj> statistics = new List<StatisticObj>();
+        public List<ResourceStatistic> resource_statistics = new List<ResourceStatistic>();
         public DateTime Start_Time { get; set; }
         public double Seconds_From
         {
