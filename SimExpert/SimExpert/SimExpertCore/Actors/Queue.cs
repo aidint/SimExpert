@@ -27,7 +27,7 @@ namespace SimExpert
                 {
                     E.Last_Queue_Time_In = Env.System_Time;
                     AQueue.Enqueue(E);
-                    Console.WriteLine(string.Format("Entity {0} enqueued at {1}", E.Id, Env.System_Time.ToString()));
+                    Console.WriteLine(string.Format("Entity {0} enqueued in Queue{2} at {1}", E.Id, Env.Seconds_From,this.AID));
                 }
                 else
                 {

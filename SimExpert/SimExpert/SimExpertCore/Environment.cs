@@ -19,6 +19,15 @@ namespace SimExpert
         public HashSet<Int64> ImportantActorIds = new HashSet<long>();
         public List<Int64> ActorsStateChanges = new List<long>();
         public Dictionary<Int64, HashSet<Int64>> ActorStateToActors = new Dictionary<long,HashSet<long>>();
+
+        public DateTime Start_Time { get; set; }
+        public double Seconds_From
+        {
+            get
+            {
+                return System_Time.Subtract(Start_Time).TotalSeconds;
+            }
+        }
         public Environment()
         {
             Sim_Actors = new Dictionary<long, Actor>();

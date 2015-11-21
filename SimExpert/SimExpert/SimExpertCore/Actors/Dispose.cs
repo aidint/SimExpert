@@ -15,9 +15,9 @@ namespace SimExpert
         public override void Process(Event.Type T, Entity E)
         {
             if (T == Event.Type.D)
-                Console.WriteLine(string.Format("Entity {0} left system at {1}", E.Id, Env.System_Time.ToString()));
+                Console.WriteLine(string.Format("Entity {0} left system at {1}", E.Id, Env.Seconds_From));
             else
-                Console.WriteLine(string.Format("Entity {0} failed at {1}", E.Id, Env.System_Time.ToString()));
+                Console.WriteLine(string.Format("Entity {0} failed at {1}", E.Id, Env.Seconds_From));
             
         }
         public override void GenerateEvent(Entity E)

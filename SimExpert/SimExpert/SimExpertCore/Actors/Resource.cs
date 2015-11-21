@@ -35,14 +35,13 @@ namespace SimExpert
         }
         public override void GenerateEvent(Entity E)
         {
-            this.Is_Busy = this.Seized == Capacity ? true : false;
-
-
+            Check_Busy();
 
             if (this.Is_Idle && (this.RQueue.Queue_Length == 0 || this.RQueue.Head_Entity == E))
             {
+                Check_Busy();
                 Seized++;
-                Console.WriteLine(string.Format("Entity {0} in Res at {1}", E.Id, Env.System_Time.ToString()));
+                Console.WriteLine(string.Format("Entity {0} in Res{2} at {1}", E.Id, Env.Seconds_From,this.AID));
                 TimeSpan Activity_Time = Activity_Distribution.Next_Time();
                 Env.FEL.Enqueue(Env.System_Time + Activity_Time, new Event(Event.Type.R, Env.System_Time + Activity_Time, this, Env, E));
                 if (RQueue.Queue_Length > 0) RQueue.AQueue.Dequeue();
@@ -53,6 +52,19 @@ namespace SimExpert
 
 
 
+        }
+
+        private void Check_Busy()
+        {
+            this.Is_Busy = this.Seized == Capacity ? true : false;
+            if (this.Is_Busy)
+            {
+                this.State = StateType.Busy;
+            }
+            else
+            {
+                this.State = StateType.Idle;
+            }
         }
 
     }

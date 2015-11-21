@@ -28,7 +28,7 @@ namespace SimExpert
 
         public override bool eval()
         {
-            if (actor2 == null)
+            if (actor2 != null)
             {
                 return actor1.State == actor2.State;
             }
