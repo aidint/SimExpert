@@ -12,7 +12,7 @@ namespace SimExpert
             this.Actor_Type = Actor.AType.Dispose;
             Env.System_Dispose.Add(this); 
         }
-        public override void Process(Event.Type T, Entity E)
+        public override void Process(Event.Type T, Entity E,Actor C = null)
         {
             if (T == Event.Type.D){
                 Console.WriteLine(string.Format("Entity {0} left system at {1}", E.Id, Env.Seconds_From));

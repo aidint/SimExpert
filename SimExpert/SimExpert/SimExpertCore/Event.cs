@@ -29,19 +29,20 @@ namespace SimExpert
         }
         private Entity E;//Entity assigned to Event
         private Actor A;//Actor assigned to Event
-        public Event(Type T, DateTime Time,  Actor A,Environment Env,Entity E)//Constructor // E = Null for Arrival Event
+        private Actor Caller;
+        public Event(Type T, DateTime Time,  Actor A,Environment Env,Entity E,Actor Caller = null)//Constructor // E = Null for Arrival Event
         {
             this.T = T;
             this.Time = Time;
             this.E = E;
             this.A = A;
             this.Env = Env;
-            
+            this.Caller = Caller;
         }
         public void Run()//Trigger Event
         {
             Env.System_Time = Time; //Add Event Time to System Time
-            A.Process(T, E);//Call the correct Process
+            A.Process(T, E, Caller);//Call the correct Process
         }
     }
 }

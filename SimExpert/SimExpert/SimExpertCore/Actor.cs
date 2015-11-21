@@ -41,7 +41,7 @@ namespace SimExpert
             
         }
 
-        public abstract void Process(Event.Type T, Entity E);
+        public abstract void Process(Event.Type T, Entity E,Actor A = null);
 
 
         public abstract void GenerateEvent(Entity E);

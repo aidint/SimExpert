@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class ResourceStatistic
+    public class ResourceStatistic
     {
         private double _total_service_time;
 
