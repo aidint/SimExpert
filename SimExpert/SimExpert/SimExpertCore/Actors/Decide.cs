@@ -28,7 +28,7 @@ namespace SimExpert
             CondToTarget.Add(index, target);
             index++;
         }
-        public override void Process(Event.Type T, Entity E)
+        public override void Process(Event.Type T, Entity E,Actor C = null)
         {
             index = 0;
             while (index < Conds.Count)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class StatisticObj
+    public class StatisticObj
     {
         private double _arrival_time;
 

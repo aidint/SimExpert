@@ -15,6 +15,7 @@ namespace SimExpert
         public Int64 Id { get; set; }
         public DateTime Last_Queue_Time_In { get; set; }
         public DateTime Last_Resource_Time_In { get; set; }
-        public StatisticObj statistic { get { if (this.statistic == null) statistic = new StatisticObj(); return statistic; } set { statistic = value; } }
+        private StatisticObj Statistic = new StatisticObj();
+        public StatisticObj statistic { get { return Statistic; } set { Statistic = value; } }
     }
 }

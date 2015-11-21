@@ -19,7 +19,7 @@ namespace SimExpert
         public Entity Head_Entity { get { return AQueue.First(); } }
         public bool Is_Empty { get { return Queue_Length == 0 ? true:false;} }
         public System.Collections.Generic.Queue<Entity> AQueue { get; set; }
-        public override void Process(Event.Type T, Entity E,Actor A)
+        public override void Process(Event.Type T, Entity E,Actor C)
         {
             if (T == Event.Type.IN)
             {
@@ -39,7 +39,7 @@ namespace SimExpert
             {
                 Entity e = AQueue.First();
                 e.Delay += Env.System_Time.Subtract(e.Last_Queue_Time_In);
-                A.GenerateEvent(e);
+                C.GenerateEvent(e);
             }
         }
         public override void GenerateEvent(Entity E)
