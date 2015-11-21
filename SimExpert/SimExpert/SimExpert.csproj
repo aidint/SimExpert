@@ -46,11 +46,21 @@
     <Compile Include="RandNumberDistribution.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Random\Cauchy.cs" />
+    <Compile Include="Random\Discrete.cs" />
+    <Compile Include="Random\Exponential.cs" />
     <Compile Include="Random\FastRandom.cs" />
     <Compile Include="Random\IRandom.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Random\LogNormal.cs" />
+    <Compile Include="Random\Normal.cs" />
+    <Compile Include="Random\NormalNegative.cs" />
+    <Compile Include="Random\NormalPositive.cs" />
     <Compile Include="Random\SystemRandom.cs" />
+    <Compile Include="Random\Triangular.cs" />
+    <Compile Include="Random\Uniform.cs" />
+    <Compile Include="Random\Weibull.cs" />
     <Compile Include="SimExpertCore\Actor.cs" />
     <Compile Include="SimExpertCore\Actors\Create.cs" />
     <Compile Include="SimExpertCore\Actors\Decide.cs" />

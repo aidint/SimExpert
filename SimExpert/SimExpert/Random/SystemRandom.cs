@@ -5,7 +5,7 @@ using System;
 namespace SimExpert
 {
   public class SystemRandom : IRandom {
-    private Random random;
+    protected Random random;
 
     public SystemRandom() {
       random = new Random();
@@ -26,7 +26,7 @@ namespace SimExpert
       return random.Next(lowerBound, upperBound);
     }
 
-    public double NextDouble() {
+    virtual public double NextDouble() {
       return random.NextDouble();
     }
 
