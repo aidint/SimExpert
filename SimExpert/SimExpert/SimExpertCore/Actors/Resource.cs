@@ -12,7 +12,6 @@ namespace SimExpert
             this.Capacity = Capacity;
             this.Activity_Distribution = dist;
             this.RQueue = Queue == null ? new Queue(env, -100, 0) : Queue;
-            RQueue.Next_AID.Add("first", this.AID);
             this.Actor_Type = Actor.AType.Resource;
             
         }
