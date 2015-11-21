@@ -11,7 +11,7 @@ namespace SimExpert
         static void Main(string[] args)
         {
             
-            //A Test
+            //A Test; Simple Simulation, Resource without queue
             
 
             Environment env = new Environment();
@@ -22,8 +22,11 @@ namespace SimExpert
             Create c = new Create(env,0,20,dist);
 
             Dispose d = new Dispose(env,1);
+            Queue q = new Queue(env, 3);
+            q.Capacity = 10;
+            Resource r = new Resource(env, 2,1,dist1,q);
 
-            Resource r = new Resource(env, 2,1,dist1);
+            
            
             c.Next_AID.Add("First", 2);
             r.Next_AID.Add("First", 1);

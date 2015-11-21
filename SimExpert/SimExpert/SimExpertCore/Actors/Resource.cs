@@ -11,6 +11,10 @@ namespace SimExpert
         public Resource(Environment env, Int64 Id, int Capacity, Distribution dist,Queue Queue = null) : base(env, Id) { this.Capacity = Capacity;
             this.Activity_Distribution = dist;
             this.RQueue = Queue;
+            if (Queue != null)
+            {
+                RQueue.Next_AID.Add("first", this.AID);
+            }
         }
         public int Capacity { get; set; }
         public int Seized { get; set; }
@@ -44,8 +48,8 @@ namespace SimExpert
                 }
                 else
                 {
-                    Actor System_Dispose = Env.Sim_Actors.Values.Where(t => t.AType == Actor.Type.D).First();
-                    Env.FEL.Enqueue(Env.System_Time, new Event(Event.Type.F, Env.System_Time, System_Dispose, Env, E));
+                    
+                    Env.FEL.Enqueue(Env.System_Time, new Event(Event.Type.F, Env.System_Time, Env.System_Dispose.First(), Env, E));
                 }
             }
         }

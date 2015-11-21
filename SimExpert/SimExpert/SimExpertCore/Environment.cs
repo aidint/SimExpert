@@ -8,6 +8,8 @@ namespace SimExpert
 {
     public class Environment
     {
+        public List<Actor> System_Dispose { get; set; }
+        public List<Actor> System_Create { get; set; }
         public DateTime System_Time { get; set; }
         public EventQueue FEL { get; set; }
         public Nullable<TimeSpan> Simulation_Time { get; set; }
@@ -15,6 +17,8 @@ namespace SimExpert
         public Environment()
         {
             Sim_Actors = new Dictionary<long, Actor>();
+            System_Create = new List<Actor>();
+            System_Dispose = new List<Actor>();
         }
 
         public void Setup_Simulation(Nullable<TimeSpan> Simulation_Time = null)
@@ -22,8 +26,8 @@ namespace SimExpert
             this.Simulation_Time = Simulation_Time;
             
             FEL = new EventQueue(10000);
-            Actor[] clist = Sim_Actors.Values.Where(t => t.AType == Actor.Type.C).ToArray();
-            foreach (Actor a in clist)
+            
+            foreach (Actor a in System_Create)
             {
                 
                 Entity E = new Entity();

@@ -13,7 +13,8 @@ namespace SimExpert
         private int current_number = 2;
         public Create(Environment env,Int64 Id, int Num, Distribution dist) : base(env,Id) { this.Number_Of_Entities = Num;
             this.Create_Distribution = dist;
-            AType = Type.C; }
+            Env.System_Create.Add(this);
+        }
         
         public override void Process(Event.Type T, Entity E)
         {

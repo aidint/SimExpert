@@ -13,5 +13,6 @@ namespace SimExpert
         public TimeSpan Fail_Time { get; set; }
         public TimeSpan Delay { get; set; }
         public Int64 Id { get; set; }
+        public DateTime Last_Queue_Time_In { get; set; }
     }
 }

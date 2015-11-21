@@ -8,7 +8,7 @@ namespace SimExpert
 {
     public class Dispose : Actor
     {
-        public Dispose(Environment env, Int64 Id) : base(env, Id) { this.AType = Type.D; }
+        public Dispose(Environment env, Int64 Id) : base(env, Id) { Env.System_Dispose.Add(this); }
         public override void Process(Event.Type T, Entity E)
         {
             if (T == Event.Type.D)
