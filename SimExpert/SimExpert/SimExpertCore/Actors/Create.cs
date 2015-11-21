@@ -31,6 +31,9 @@ namespace SimExpert
                 Entity en = new Entity();
                 en.InterArrival_Time = Create_Distribution.Next_Time();
                 en.Id = current_number;
+                en.statistic.EntityId = en.Id;
+                en.statistic.Arrival = Env.Seconds_From;
+                en.statistic.InterArrival = en.InterArrival_Time.TotalSeconds;
                 Env.FEL.Enqueue(Env.System_Time.Add(en.InterArrival_Time),
                     new Event(Event.Type.C, Env.System_Time.Add(en.InterArrival_Time), this, Env, en));
                 current_number++;
