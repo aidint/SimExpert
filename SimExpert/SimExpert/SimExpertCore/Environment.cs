@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,13 @@ namespace SimExpert
             while (FEL.Count > 0)
             {
                 FEL.Dequeue().Event.Run();
+            }
+        }
+
+        public void GenerateResults()
+        {
+            using (StreamWriter w = new StreamWriter(@"C:\Users\GS70\Desktop\entities.csv"))
+            {
             }
         }
     }
