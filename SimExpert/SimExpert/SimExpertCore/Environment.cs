@@ -50,7 +50,7 @@ namespace SimExpert
                 E.InterArrival_Time = TimeSpan.FromSeconds(0);
                 E.Id = 1;
                 E.statistic.EntityId = E.Id;
-
+                this.statistics.Add(E.statistic);
                 Event ev = new Event(Event.Type.C, System_Time, a, this, E);
                 FEL.Enqueue(System_Time,ev);
             }
