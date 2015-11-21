@@ -8,5 +8,10 @@ namespace SimExpert
 {
     public class Entity
     {
+        public DateTime Arrival_Time { get; set;}
+        public TimeSpan InterArrival_Time { get; set; }
+        public TimeSpan Fail_Time { get; set; }
+        public TimeSpan Delay { get; set; }
+        public Int64 Id { get; set; }
     }
 }

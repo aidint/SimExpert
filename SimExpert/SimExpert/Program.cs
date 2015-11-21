@@ -15,18 +15,17 @@ namespace SimExpert
             
 
             Environment env = new Environment();
-            Create c = new Create(env);
-            Event e = new Event(Event.Type.C, TimeSpan.FromMinutes(3), c, env, new Entity());
-            Event e1 = new Event(Event.Type.C, TimeSpan.FromMinutes(5), c, env, new Entity());
-            Event e2 = new Event(Event.Type.C, TimeSpan.FromMinutes(2), c, env, new Entity());
-            Event e3 = new Event(Event.Type.C, TimeSpan.FromMinutes(1), c, env, new Entity());
-            Event e4 = new Event(Event.Type.C, TimeSpan.FromMinutes(0), c, env, new Entity());
-            e.Run();
-            e1.Run();
-            e2.Run();
-            e3.Run();
-            e4.Run();
-            Console.WriteLine(env.System_Time);
+
+            Distribution dist = new Distribution();
+            Create c = new Create(env,0,20,dist);
+
+            Dispose d = new Dispose(env,1);
+           
+            c.Next_AID.Add("First", 1);
+
+            env.System_Time = new DateTime(1970,1,1,0,0,0);
+            env.Setup_Simulation();
+            env.Simulate();
             Console.Read();
             //
         }
