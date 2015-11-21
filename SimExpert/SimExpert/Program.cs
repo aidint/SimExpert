@@ -21,7 +21,7 @@ namespace SimExpert
             List<double> distribution = new List<double>() { 0.2, 0.1, 0.1, 0.5, 0.1 };
             Discrete d = new Discrete(valueList, distribution);
             //dist1
-            Normal n = new Normal(1.5, 2.5, 1);
+            Uniform n = new Uniform(1,3);
             Distribution dist = new Distribution(d);
             Distribution dist1 = new Distribution(n);
 

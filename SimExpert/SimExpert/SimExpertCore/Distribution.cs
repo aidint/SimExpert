@@ -15,7 +15,8 @@ namespace SimExpert
         }
         public TimeSpan Next_Time()
         {
-            return TimeSpan.FromSeconds(Rand.Next());
+
+            return TimeSpan.FromSeconds(Rand.NextDouble());
         }
     }
 }

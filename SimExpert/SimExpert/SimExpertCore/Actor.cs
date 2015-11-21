@@ -8,9 +8,18 @@ namespace SimExpert
 {
     public abstract class Actor
     {
+        public enum AType
+        {
+            Create,
+            Decide,
+            Dispose,
+            Queue,
+            Resource
+        }
         public bool Is_Finished { get; set; }
         public bool Is_Busy { get; set; }
         public bool Is_Idle { get { return !Is_Busy;} set{ Is_Busy = !value;} }
+        public AType Actor_Type { get; set; }
         public enum StateType
         {
             Idle,
