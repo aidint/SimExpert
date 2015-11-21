@@ -62,12 +62,18 @@ namespace SimExpert
             {
                 FEL.Dequeue().Event.Run();
             }
+            GenerateResults();
         }
 
         public void GenerateResults()
         {
             using (StreamWriter w = new StreamWriter(@"C:\Users\GS70\Desktop\entities.csv"))
             {
+                w.WriteLine("Id,Arrival,InterArrival,Departure,Delay,Service");
+                foreach (StatisticObj s in statistics)
+                {
+                    w.WriteLine(s.EntityId.ToString() + "," + s.Arrival.ToString() + "," + s.InterArrival + "," + s.Departure + "," + s.TotalQueueDelay + "," + s.TotalResourceDelay);
+                }
             }
         }
     }
