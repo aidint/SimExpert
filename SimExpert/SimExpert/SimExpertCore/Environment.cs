@@ -49,6 +49,7 @@ namespace SimExpert
                 Entity E = new Entity();
                 E.InterArrival_Time = TimeSpan.FromSeconds(0);
                 E.Id = 1;
+                E.statistic.EntityId = E.Id;
 
                 Event ev = new Event(Event.Type.C, System_Time, a, this, E);
                 FEL.Enqueue(System_Time,ev);
@@ -76,6 +77,16 @@ namespace SimExpert
                 foreach (StatisticObj s in statistics)
                 {
                     w.WriteLine(s.EntityId.ToString() + "," + s.Arrival.ToString() + "," + s.InterArrival + "," + s.Departure + "," + s.TotalQueueDelay + "," + s.TotalResourceDelay);
+                }
+
+            }
+
+            using (StreamWriter w = new StreamWriter(@"resources.csv"))
+            {
+                w.WriteLine("Id,Total Service Time, Utilization");
+                foreach (ResourceStatistic s in resource_statistics)
+                {
+                    w.WriteLine(s.ResourceId + "," + s.TotalServiceTime + "," + s.TotalServiceTime / Seconds_From);
                 }
             }
         }
