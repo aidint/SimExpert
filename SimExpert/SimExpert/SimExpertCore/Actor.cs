@@ -8,10 +8,16 @@ namespace SimExpert
 {
     public abstract class Actor
     {
+        public enum Type
+        {
+            C,//Create
+            D,//Dispose
+            O//Other
+        }
         public bool Is_Finished { get; set; }
         public bool Is_Busy { get; set; }
         public bool Is_Idle { get { return !Is_Busy;} set{ Is_Busy = !value;} }
-        public bool Is_Create = false;
+        public Type AType { get; set; }
         public Environment Env { get; set; }
         public Dictionary<string,Int64> Next_AID { get; set; }
         public Int64 AID { get; set; }
@@ -21,6 +27,10 @@ namespace SimExpert
             this.AID = AID;
             this.Env.Sim_Actors.Add(AID, this);
             this.Next_AID = new Dictionary<string, long>();
+            this.AType = Type.O;
+            this.Is_Busy = false;
+            this.Is_Finished = false;
+            
         }
 
         public abstract void Process(Event.Type T, Entity E);

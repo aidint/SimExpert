@@ -8,10 +8,13 @@ namespace SimExpert
 {
     public class Dispose : Actor
     {
-        public Dispose(Environment env, Int64 Id) : base(env, Id) { }
+        public Dispose(Environment env, Int64 Id) : base(env, Id) { this.AType = Type.D; }
         public override void Process(Event.Type T, Entity E)
         {
-            Console.WriteLine(string.Format("Entity {0} left system at {1}", E.Id, Env.System_Time.ToString()));
+            if (T == Event.Type.D)
+                Console.WriteLine(string.Format("Entity {0} left system at {1}", E.Id, Env.System_Time.ToString()));
+            else
+                Console.WriteLine(string.Format("Entity {0} failed at {1}", E.Id, Env.System_Time.ToString()));
             
         }
         public override void GenerateEvent(Entity E)

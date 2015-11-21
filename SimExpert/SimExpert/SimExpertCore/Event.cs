@@ -21,18 +21,18 @@ namespace SimExpert
             F//Fail
         };
         private Type T;//Event Type
-        private DateTime time;//Event Time
+        
         public DateTime Time
         {
-            get { return time; }
-            set { time = value; }//
+            get;
+            set;
         }
         private Entity E;//Entity assigned to Event
         private Actor A;//Actor assigned to Event
         public Event(Type T, DateTime Time,  Actor A,Environment Env,Entity E)//Constructor // E = Null for Arrival Event
         {
             this.T = T;
-            this.time = Time;
+            this.Time = Time;
             this.E = E;
             this.A = A;
             this.Env = Env;

@@ -8,9 +8,14 @@ namespace SimExpert
 {
     public class Distribution
     {
+        private int Time;
+        public Distribution(int time)
+        {
+            Time = time;
+        }
         public TimeSpan Next_Time()
         {
-            return TimeSpan.FromSeconds(1);
+            return TimeSpan.FromSeconds(Time);
         }
     }
 }

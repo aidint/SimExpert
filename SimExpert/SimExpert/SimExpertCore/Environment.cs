@@ -11,10 +11,10 @@ namespace SimExpert
         public DateTime System_Time { get; set; }
         public EventQueue FEL { get; set; }
         public Nullable<TimeSpan> Simulation_Time { get; set; }
-        public Dictionary<Int64, Actor> Sim_Actors = new Dictionary<long, Actor>();
+        public Dictionary<Int64, Actor> Sim_Actors { get; set; }
         public Environment()
         {
-
+            Sim_Actors = new Dictionary<long, Actor>();
         }
 
         public void Setup_Simulation(Nullable<TimeSpan> Simulation_Time = null)
@@ -22,7 +22,7 @@ namespace SimExpert
             this.Simulation_Time = Simulation_Time;
             
             FEL = new EventQueue(10000);
-            Actor[] clist = Sim_Actors.Values.Where(t => t.Is_Create).ToArray();
+            Actor[] clist = Sim_Actors.Values.Where(t => t.AType == Actor.Type.C).ToArray();
             foreach (Actor a in clist)
             {
                 

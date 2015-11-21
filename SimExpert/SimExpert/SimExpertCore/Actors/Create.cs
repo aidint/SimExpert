@@ -11,10 +11,13 @@ namespace SimExpert
         public int Number_Of_Entities { get; set; }
         public Distribution Create_Distribution { get; set; }
         private int current_number = 2;
-        public Create(Environment env,Int64 Id, int Num, Distribution dist) : base(env,Id) { this.Number_Of_Entities = Num; this.Create_Distribution = dist; Is_Create = true; }
+        public Create(Environment env,Int64 Id, int Num, Distribution dist) : base(env,Id) { this.Number_Of_Entities = Num;
+            this.Create_Distribution = dist;
+            AType = Type.C; }
         
         public override void Process(Event.Type T, Entity E)
         {
+            this.Is_Busy = true;
             E.Arrival_Time = Env.System_Time;
             E.Delay = TimeSpan.FromSeconds(0);
             Console.WriteLine(string.Format("Entity {0} entered the system at {1}", E.Id, Env.System_Time.ToString()));
@@ -29,6 +32,11 @@ namespace SimExpert
                     new Event(Event.Type.C, Env.System_Time.Add(en.InterArrival_Time), this, Env, en));
                 current_number++;
             }
+            else
+            {
+                this.Is_Finished = true;
+            }
+            this.Is_Busy = false;
             
         }
 
