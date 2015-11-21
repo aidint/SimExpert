@@ -60,14 +60,17 @@ namespace SimExpert
             
             while (FEL.Count > 0)
             {
-                FEL.Dequeue().Event.Run();
+                Event e = FEL.Dequeue().Event;
+                if (Simulation_Time != null && Start_Time.Add((TimeSpan)Simulation_Time) <= e.Time) break;
+                e.Run();
             }
+            Console.WriteLine("End Of Simulation(EOS)|");
             GenerateResults();
         }
 
         public void GenerateResults()
         {
-            using (StreamWriter w = new StreamWriter(@"C:\Users\GS70\Desktop\entities.csv"))
+            using (StreamWriter w = new StreamWriter(@"entities.csv"))
             {
                 w.WriteLine("Id,Arrival,InterArrival,Departure,Delay,Service");
                 foreach (StatisticObj s in statistics)
