@@ -16,13 +16,19 @@ namespace SimExpert
 
             Environment env = new Environment();
 
-            Distribution dist = new Distribution(1);
-            Distribution dist1 = new Distribution(2);
+            //dist
+            List<double> valueList = new List<double>() { 1, 2, 3, 4, 5 };
+            List<double> distribution = new List<double>() { 0.2, 0.1, 0.1, 0.5, 0.1 };
+            Discrete d = new Discrete(valueList, distribution);
+            //dist1
+            Normal n = new Normal(1.5, 2.5, 1);
+            Distribution dist = new Distribution(d);
+            Distribution dist1 = new Distribution(n);
 
             Create c = new Create(env,0,20,dist);
 
-            Dispose d = new Dispose(env,1);
-            Queue q = new Queue(env,3);
+            Dispose di = new Dispose(env,1);
+            Queue q = new Queue(env, 3);
             q.Capacity = 10;
             Resource r = new Resource(env, 2,1,dist1,q);
 
