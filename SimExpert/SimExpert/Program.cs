@@ -19,44 +19,52 @@ namespace SimExpert
             //sd.run();
             /////////
             //Simple Shared Queue
+            //Samples.SimpleSharedQueue ssd = new Samples.SimpleSharedQueue();
+            //ssd.run();
+            //Able and Baker
             Environment env = new Environment();
 
-            //dist
-            Uniform d = new Uniform(1, 1, 0);
+            //dist for Create 
+            Uniform CreateDist = new Uniform(1, 5, 0);
 
-            //dist1
-            Uniform n = new Uniform(5, 5, 0);
-            Distribution dist = new Distribution(d);
-            Distribution dist1 = new Distribution(n);
+            //dist for Able
+            Uniform AbleDist = new Uniform(4, 6, 0);
 
-            Create c = new Create(env, 0, 10, dist);
+            //dist for Baker
+            Uniform BakerDist = new Uniform(2, 5, 0);
 
-            Dispose di = new Dispose(env, 10);
+            Distribution DistCreate = new Distribution(CreateDist);
+            Distribution DistAble = new Distribution(AbleDist);
+            Distribution DistBaker = new Distribution(BakerDist);
 
-            Queue q = new Queue(env, 3);
-            q.Capacity = 10;
-            Resource r = new Resource(env, 1, 1, dist1, q);
+            Create create = new Create(env, 0, 100, DistCreate);
 
-            Queue q2 = new Queue(env, 4);
-            q2.Capacity = 5;
-            Resource r2 = new Resource(env, 2, 1, dist1, q);
+            Dispose dispose = new Dispose(env, 10);
 
-            Decide de = new Decide(env, 5);
+            Queue SharedQueue = new Queue(env, 3);
+
+            Resource Able = new Resource(env, 1, 1, DistAble, SharedQueue);
+
+
+            Resource Baker = new Resource(env, 2, 1, DistBaker, SharedQueue);
+
+            Decide decide = new Decide(env, 5);
             //Condition
-            EQCond cond = new EQCond(0, r, Actor.StateType.Busy);
-            de.AddCondition(cond, r2.AID);
-            de.AddElse(r.AID);
+            EQCond cond = new EQCond(0, Able, Actor.StateType.Idle);
+            decide.AddCondition(cond, Able.AID);
+            decide.AddElse(Baker.AID);
 
 
-            c.Next_AID.Add("First", 5);
-            r.Next_AID.Add("First", 10);
-            r2.Next_AID.Add("First", 10);
+            create.Next_AID.Add("First", 5);
+            Able.Next_AID.Add("First", 10);
+            Baker.Next_AID.Add("First", 10);
 
             env.System_Time = new DateTime(1970, 1, 1, 0, 0, 0);
             env.Start_Time = new DateTime(1970, 1, 1, 0, 0, 0);
             env.Setup_Simulation();
             env.Simulate();
             ///////
+            //
             Console.Read();
             //
         }
