@@ -14,6 +14,11 @@ namespace SimExpert
         public EventQueue FEL { get; set; }
         public Nullable<TimeSpan> Simulation_Time { get; set; }
         public Dictionary<Int64, Actor> Sim_Actors { get; set; }
+        public bool _env_state_changed = false;
+        public bool EnvStateChanged { get { return _env_state_changed} set {_env_state_changed = value} }
+        public HashSet<Int64> ImportantActorIds = new HashSet<long>();
+        public List<Int64> ActorsStateChanges = new List<long>();
+        public Dictionary<Int64, HashSet<Int64>> ActorStateToActors = new Dictionary<long,HashSet<long>>();
         public Environment()
         {
             Sim_Actors = new Dictionary<long, Actor>();

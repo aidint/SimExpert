@@ -8,5 +8,9 @@ namespace SimExpert
 {
     public class Condition
     {
+
+        virtual public bool eval();
+        virtual public void exhast();
+
     }
 }
