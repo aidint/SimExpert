@@ -11,13 +11,21 @@ namespace SimExpert
         public bool Is_Finished { get; set; }
         public bool Is_Busy { get; set; }
         public bool Is_Idle { get { return !Is_Busy;} set{ Is_Busy = !value;} }
+        public bool Is_Create = false;
         public Environment Env { get; set; }
-        public Int64 Next_AID { get; set; }
-        protected Actor(Environment Env)
+        public Dictionary<string,Int64> Next_AID { get; set; }
+        public Int64 AID { get; set; }
+        protected Actor(Environment Env,Int64 AID)
         {
             this.Env = Env;
+            this.AID = AID;
+            this.Env.Sim_Actors.Add(AID, this);
+            this.Next_AID = new Dictionary<string, long>();
         }
+
         public abstract void Process(Event.Type T, Entity E);
 
+
+        public abstract void GenerateEvent(Entity E);
     }
 }

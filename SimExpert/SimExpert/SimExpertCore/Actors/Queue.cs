@@ -8,12 +8,16 @@ namespace SimExpert
 {
     public class Queue : Actor
     {
-        public Queue(Environment env) : base(env) { }
+        public Queue(Environment env, Int64 Id) : base(env, Id) { }
         public int Capacity { get; set; }
         public int Queue_Length { get; set; }
         public override void Process(Event.Type T, Entity E)
         {
 
+        }
+        public override void GenerateEvent(Entity E)
+        {
+            throw new NotImplementedException();
         }
     }
 }
