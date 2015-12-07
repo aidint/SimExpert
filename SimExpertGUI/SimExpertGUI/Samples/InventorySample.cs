@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimExpert.Samples
 {
-    class InventorySample
+    class InventorySample : Sample
     {
-        public double run()
+        public override void run()
         {
             Environment env = new Environment();
 
@@ -58,10 +58,8 @@ namespace SimExpert.Samples
             env.Setup_Simulation();
             env.Simulate();
 
-            double sumOfProfit = 0;
-            for (int i = 1; i <= 20; i++)
-                sumOfProfit += (double)inv.Statistics.OtherStatistics[i][5].StatisticValue;
-            return sumOfProfit;
+            
+            
 
         }
     }

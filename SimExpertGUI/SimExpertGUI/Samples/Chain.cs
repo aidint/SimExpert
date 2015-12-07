@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimExpert.Samples
 {
-    class Chain
+    class Chain : Sample
     {
-        public void run()
+        public override void run()
         {
             Environment env = new Environment();
 

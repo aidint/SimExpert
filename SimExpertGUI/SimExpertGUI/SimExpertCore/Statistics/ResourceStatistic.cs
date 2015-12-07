@@ -22,6 +22,15 @@ namespace SimExpert
             set { _total_service_time = value; }
         }
         public Int64 ResourceId { get; set; }
+
+        private Int64 _total_service_number = 0;
+
+        public Int64 TotalServiceNumber
+        {
+            get { return _total_service_number; }
+            set { _total_service_number = value; }
+        }
+
         
         
     }

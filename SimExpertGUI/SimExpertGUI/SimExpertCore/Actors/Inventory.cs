@@ -98,7 +98,7 @@ namespace SimExpert
         }
         public override void Process(Event.Type T, Entity E,Actor A=null)
         {
-            Console.WriteLine("Entity" + E.Id + " Entered Inventory" + this.AID + " for loading");
+            //////Console.WriteLine("Entity" + E.Id + " Entered Inventory" + this.AID + " for loading");
 
             Int64 LoadNeed = Level - Quantity;
             if (Quantity < Level)
@@ -110,7 +110,7 @@ namespace SimExpert
                 }
                 else throw new Exception("Not enough stock for Inventory(Id=" + AID);
             }
-            Console.WriteLine("Inventory" + this.AID  + " loaded " + LoadNeed + " units");
+            ////////Console.WriteLine("Inventory" + this.AID  + " loaded " + LoadNeed + " units");
 
             base.CallNext(E);
 
@@ -145,7 +145,7 @@ namespace SimExpert
             ResourceOtherStatistics[] Stats = new ResourceOtherStatistics[] {StateStat,DemandStat,RevStat,LostStat,ScrapStat,ProfitStat };
 
             Statistics.OtherStatistics.Add(_current_cycle, Stats);
-            Console.WriteLine("Inventory" + this.AID + " ended cycle" + _current_cycle);
+            //////Console.WriteLine("Inventory" + this.AID + " ended cycle" + _current_cycle);
             _current_cycle++;
             
             

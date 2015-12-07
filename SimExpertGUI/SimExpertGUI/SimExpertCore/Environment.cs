@@ -63,7 +63,7 @@ namespace SimExpert
                 if (Simulation_Time != null && Start_Time.Add((TimeSpan)Simulation_Time) <= e.Time) break;
                 e.Run();
             }
-            Console.WriteLine("End Of Simulation(EOS)|");
+            //Console.WriteLine("End Of Simulation(EOS)|");
             GenerateResults();
         }
 

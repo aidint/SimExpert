@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimExpert.Samples
 {
-    class SimpleProbShare
+    class SimpleProbShare:Sample
     {
-        public void run()
+        public override void run()
         {
             Environment env = new Environment();
 

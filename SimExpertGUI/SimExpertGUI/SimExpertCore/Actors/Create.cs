@@ -31,7 +31,7 @@ namespace SimExpert
             this.Is_Busy = true;
             E.Arrival_Time = Env.System_Time;
             E.Delay = TimeSpan.FromSeconds(0);
-            Console.WriteLine(string.Format("Entity {0} entered the system at {1}", E.Id, Env.Seconds_From));
+            //Console.WriteLine(string.Format("Entity {0} entered the system at {1}", E.Id, Env.Seconds_From));
             base.CallNext(E);
             if (current_number <= Number_Of_Entities)
             {

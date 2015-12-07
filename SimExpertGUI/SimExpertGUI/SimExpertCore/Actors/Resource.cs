@@ -41,7 +41,7 @@ namespace SimExpert
         }
         public override void GenerateEvent(Entity E)
         {
-            E.statistic.TestService = this.AID;
+            this.Statistics.TotalServiceNumber++;
             Check_Busy();
 
             if (this.Is_Idle && (this.RQueue.Queue_Length == 0 || this.RQueue.Head_Entity == E))
@@ -49,7 +49,7 @@ namespace SimExpert
                 
                 Seized++;
                 Check_Busy();
-                Console.WriteLine(string.Format("Entity {0} in Res{2} at {1}", E.Id, Env.Seconds_From,this.AID));
+                //Console.WriteLine(string.Format("Entity {0} in Res{2} at {1}", E.Id, Env.Seconds_From,this.AID));
                 TimeSpan Activity_Time = Activity_Distribution.Next_Time();
                 E.Last_Resource_Time_In = Env.System_Time;
                 E.statistic.Add_Resource_Delay(this.AID, Activity_Time.TotalSeconds);

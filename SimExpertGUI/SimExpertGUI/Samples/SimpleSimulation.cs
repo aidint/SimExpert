@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SimExpert.Samples
 {
-    class SimpleSimulation
+    class SimpleSimulation : Sample
     {
-        public void run()
+        public override void run()
         {
             Environment env = new Environment();
 

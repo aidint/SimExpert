@@ -56,6 +56,7 @@
     <Compile Include="Samples\AbleBaker.cs" />
     <Compile Include="Samples\Chain.cs" />
     <Compile Include="Samples\InventorySample.cs" />
+    <Compile Include="Samples\Sample.cs" />
     <Compile Include="Samples\SimpleDecide.cs" />
     <Compile Include="Samples\SimpleProbShare.cs" />
     <Compile Include="Samples\SimpleSharedQueue.cs" />
