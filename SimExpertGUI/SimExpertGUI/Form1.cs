@@ -60,9 +60,13 @@ namespace SimExpertGUI
                     sample = new SimpleSimulation();
                     break;
             }
-            for (int i = 0; i < NumberOfSimulations; i++ )
-                sample.run();
+            List<Statistics> Stats = new List<Statistics>();
+            for (int i = 0; i < NumberOfSimulations; i++)
+                Stats.Add(sample.run());
 
+            ChartSelection cs = new ChartSelection(Stats,this);
+            cs.Show();
+            
         }
 
         private void label1_Click(object sender, EventArgs e)

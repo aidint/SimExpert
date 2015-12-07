@@ -8,7 +8,7 @@ namespace SimExpert.Samples
 {
     class SimpleSimulation : Sample
     {
-        public override void run()
+        public override Statistics run()
         {
             Environment env = new Environment();
 
@@ -37,7 +37,7 @@ namespace SimExpert.Samples
             env.System_Time = new DateTime(1970, 1, 1, 0, 0, 0);
             env.Start_Time = new DateTime(1970, 1, 1, 0, 0, 0);
             env.Setup_Simulation();
-            env.Simulate();
+            return env.Simulate();
         }
     }
 }

@@ -95,6 +95,7 @@ namespace SimExpert
             this.ScrapPricePerUnit = ScrapPricePerUnit;
             this._salvage = Salvage;
             this._statistics = new ResourceStatistic();
+            this.Env.resource_statistics.Add(this.Statistics);
         }
         public override void Process(Event.Type T, Entity E,Actor A=null)
         {

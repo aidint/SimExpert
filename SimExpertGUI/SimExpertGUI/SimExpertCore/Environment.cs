@@ -21,7 +21,15 @@ namespace SimExpert
         public List<Int64> ActorsStateChanges = new List<long>();
         public Dictionary<Int64, HashSet<Int64>> ActorStateToActors = new Dictionary<long,HashSet<long>>();
         private List<StatisticObj> statistics = new List<StatisticObj>();
+        private List<ResourceStatistic> inventory_statistics = new List<ResourceStatistic>();
 
+
+
+        public List<ResourceStatistic> InventoryStatistics
+        {
+            get { return inventory_statistics; }
+            set { inventory_statistics = value; }
+        }
         public List<StatisticObj> Statistics
         {
             get { return statistics; }
@@ -54,7 +62,7 @@ namespace SimExpert
             }
         }
 
-        public void Simulate()
+        public Statistics Simulate()
         {
             
             while (FEL.Count > 0)
@@ -64,7 +72,11 @@ namespace SimExpert
                 e.Run();
             }
             //Console.WriteLine("End Of Simulation(EOS)|");
-            GenerateResults();
+            Statistics stat = new Statistics();
+            stat.EntityStatistics = statistics;
+            stat.InventoryStatistics = inventory_statistics;
+            stat.ResourceStatistics = resource_statistics;
+            return stat;
         }
 
         public void GenerateResults()

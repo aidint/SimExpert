@@ -45,6 +45,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChartForm.Designer.cs">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChartSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChartSelection.Designer.cs">
+      <DependentUpon>ChartSelection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +107,13 @@
     <Compile Include="SimExpertCore\Statistics\ResourceOtherStatistics.cs" />
     <Compile Include="SimExpertCore\Statistics\ResourceStatistic.cs" />
     <Compile Include="SimExpertCore\Statistics\StatisticObj.cs" />
+    <Compile Include="SimExpertCore\Statistics\Statistics.cs" />
+    <EmbeddedResource Include="ChartForm.resx">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChartSelection.resx">
+      <DependentUpon>ChartSelection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,6 +8,7 @@ namespace SimExpert
 {
     public class StatisticObj
     {
+        
         private double _arrival_time;
 
         public double Arrival

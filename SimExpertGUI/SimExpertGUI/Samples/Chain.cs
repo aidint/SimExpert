@@ -8,7 +8,7 @@ namespace SimExpert.Samples
 {
     class Chain : Sample
     {
-        public override void run()
+        public override Statistics run()
         {
             Environment env = new Environment();
 
@@ -50,7 +50,7 @@ namespace SimExpert.Samples
             env.System_Time = new DateTime(1970, 1, 1, 0, 0, 0);
             env.Start_Time = new DateTime(1970, 1, 1, 0, 0, 0);
             env.Setup_Simulation(TimeSpan.FromSeconds(300));
-            env.Simulate();
+            return env.Simulate();
         }
     }
 }
