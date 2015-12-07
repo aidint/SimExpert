@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +53,50 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Samples\AbleBaker.cs" />
+    <Compile Include="Samples\Chain.cs" />
+    <Compile Include="Samples\InventorySample.cs" />
+    <Compile Include="Samples\SimpleDecide.cs" />
+    <Compile Include="Samples\SimpleProbShare.cs" />
+    <Compile Include="Samples\SimpleSharedQueue.cs" />
+    <Compile Include="Samples\SimpleSimulation.cs" />
+    <Compile Include="SimExpertCore\Actor.cs" />
+    <Compile Include="SimExpertCore\Actors\Create.cs" />
+    <Compile Include="SimExpertCore\Actors\Decide.cs" />
+    <Compile Include="SimExpertCore\Actors\Dispose.cs" />
+    <Compile Include="SimExpertCore\Actors\Inventory.cs" />
+    <Compile Include="SimExpertCore\Actors\Queue.cs" />
+    <Compile Include="SimExpertCore\Actors\Resource.cs" />
+    <Compile Include="SimExpertCore\Collections\EventQueue.cs" />
+    <Compile Include="SimExpertCore\Collections\EventQueueNode.cs" />
+    <Compile Include="SimExpertCore\Condition\ANDCond.cs" />
+    <Compile Include="SimExpertCore\Condition\Condition.cs" />
+    <Compile Include="SimExpertCore\Condition\EQCond.cs" />
+    <Compile Include="SimExpertCore\Condition\ORCond.cs" />
+    <Compile Include="SimExpertCore\Distribution.cs" />
+    <Compile Include="SimExpertCore\Entity.cs" />
+    <Compile Include="SimExpertCore\Environment.cs" />
+    <Compile Include="SimExpertCore\Event.cs" />
+    <Compile Include="SimExpertCore\Random\Cauchy.cs" />
+    <Compile Include="SimExpertCore\Random\Constant.cs" />
+    <Compile Include="SimExpertCore\Random\Discrete.cs" />
+    <Compile Include="SimExpertCore\Random\Exponential.cs" />
+    <Compile Include="SimExpertCore\Random\FastRandom.cs" />
+    <Compile Include="SimExpertCore\Random\IRandom.cs" />
+    <Compile Include="SimExpertCore\Random\LogNormal.cs" />
+    <Compile Include="SimExpertCore\Random\Normal.cs" />
+    <Compile Include="SimExpertCore\Random\NormalNegative.cs" />
+    <Compile Include="SimExpertCore\Random\NormalPositive.cs" />
+    <Compile Include="SimExpertCore\Random\SystemRandom.cs" />
+    <Compile Include="SimExpertCore\Random\Triangular.cs" />
+    <Compile Include="SimExpertCore\Random\Uniform.cs" />
+    <Compile Include="SimExpertCore\Random\Weibull.cs" />
+    <Compile Include="SimExpertCore\Statistics\ResourceOtherStatistics.cs" />
+    <Compile Include="SimExpertCore\Statistics\ResourceStatistic.cs" />
+    <Compile Include="SimExpertCore\Statistics\StatisticObj.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
