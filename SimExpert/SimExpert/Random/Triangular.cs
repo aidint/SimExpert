@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Triangular : SystemRandom
+    public class Triangular : SystemRandom
     {
         public double High { get; private set; }
         public double Low { get; private set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class LogNormal : SystemRandom
+    public class LogNormal : SystemRandom
     {
         public double Mu { get; private set; }
         public double Sigma { get; private set; }

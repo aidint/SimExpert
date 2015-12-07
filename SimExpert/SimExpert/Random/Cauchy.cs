@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Cauchy : SystemRandom
+    public class Cauchy : SystemRandom
     {
         public double X0 { get; private set; }
         public double Gamma { get; private set; }

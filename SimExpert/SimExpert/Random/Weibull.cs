@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Weibull : SystemRandom
+    public class Weibull : SystemRandom
     {
         public double Beta { get; private set; }
         public double Alpha { get; private set; }

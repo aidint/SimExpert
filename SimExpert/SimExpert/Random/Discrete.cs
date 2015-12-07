@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Discrete : SystemRandom
+    public class Discrete : SystemRandom
     {
         public List<Tuple<double,double>> Probabilities { get; private set; }
         private Uniform Uni_Rand { get; set; }

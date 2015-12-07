@@ -20,7 +20,12 @@ namespace SimExpert
         public HashSet<Int64> ImportantActorIds = new HashSet<long>();
         public List<Int64> ActorsStateChanges = new List<long>();
         public Dictionary<Int64, HashSet<Int64>> ActorStateToActors = new Dictionary<long,HashSet<long>>();
-        public List<StatisticObj> statistics = new List<StatisticObj>();
+        private List<StatisticObj> statistics = new List<StatisticObj>();
+
+        public List<StatisticObj> Statistics
+        {
+            get { return statistics; }
+        }
         public List<ResourceStatistic> resource_statistics = new List<ResourceStatistic>();
         public DateTime Start_Time { get; set; }
         public double Seconds_From
@@ -43,16 +48,9 @@ namespace SimExpert
             
             FEL = new EventQueue(10000);
             
-            foreach (Actor a in System_Create)
+            foreach (Create a in System_Create)
             {
-                
-                Entity E = new Entity();
-                E.InterArrival_Time = TimeSpan.FromSeconds(0);
-                E.Id = 1;
-                E.statistic.EntityId = E.Id;
-                this.statistics.Add(E.statistic);
-                Event ev = new Event(Event.Type.C, System_Time, a, this, E);
-                FEL.Enqueue(System_Time,ev);
+                a.GenerateEvent();
             }
         }
 

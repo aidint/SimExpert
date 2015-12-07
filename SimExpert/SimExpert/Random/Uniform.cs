@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Uniform : SystemRandom
+    public class Uniform : SystemRandom
     {
         public double UpperBound { get; private set; }
         public double LowerBound { get; private set; }

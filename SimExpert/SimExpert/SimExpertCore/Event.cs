@@ -18,6 +18,7 @@ namespace SimExpert
             C,//Condition
             IN,//Enqueue
             OUT,//Dequeue
+            L,//Load(Inventory)
             F//Fail
         };
         private Type T;//Event Type

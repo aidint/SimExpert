@@ -8,6 +8,13 @@ namespace SimExpert
 {
     public class Entity
     {
+        private Int64 _amount = 1;
+
+        public Int64 Amount
+        {
+            get { return _amount; }
+            set { _amount = value; }
+        }
         public DateTime Arrival_Time { get; set;}
         public TimeSpan InterArrival_Time { get; set; }
         public TimeSpan Fail_Time { get; set; }

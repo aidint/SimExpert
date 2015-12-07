@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Exponential : SystemRandom
+    public class Exponential : SystemRandom
     {
         public double Mean { get; private set; }
         public Exponential(double mean)

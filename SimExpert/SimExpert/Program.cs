@@ -26,11 +26,28 @@ namespace SimExpert
             //ab.run();
             ///////
             //Chain Maybe
-            Samples.Chain chain = new Samples.Chain();
-            chain.run();
+            //Samples.Chain chain = new Samples.Chain();
+            //chain.run();
             ///////
+            //Inventory Sample
+            Samples.InventorySample inv = new Samples.InventorySample();
+            Dictionary<string, int> dict = new Dictionary<string, int>();
+            for (int i = 0; i < 15; i++)
+                dict.Add((20 * i).ToString() + "-" + (20 * (i + 1)).ToString(), 0);
+            List<string> keys = dict.Keys.ToList();
+            double sum = 0;
+            for (int i = 0; i < 400; i++)
+            {
+                double a = inv.run();
+                sum += a;
+                int j = (int)a / 20;
+                dict[keys[j]] = dict[keys[j]] + 1;
+
+            }
+            sum = sum / 400;
             Console.Read();
             //
+            
         }
 
         

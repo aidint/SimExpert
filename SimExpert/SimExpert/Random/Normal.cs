@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SimExpert
 {
-    class Normal : SystemRandom
+    public class Normal : SystemRandom
     {
         protected static readonly double NormalMagicConst = 4 * Math.Exp(-0.5) / Math.Sqrt(2.0);
         public double Mu { get; private set; }
