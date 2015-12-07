@@ -24,5 +24,6 @@ namespace SimExpert
         public DateTime Last_Resource_Time_In { get; set; }
         private StatisticObj Statistic = new StatisticObj();
         public StatisticObj statistic { get { return Statistic; } set { Statistic = value; } }
+        
     }
 }

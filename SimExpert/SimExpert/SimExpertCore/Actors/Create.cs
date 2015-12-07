@@ -18,7 +18,7 @@ namespace SimExpert
         public int Number_Of_Entities { get; set; }
         public Distribution Create_Distribution { get; set; }
         private int current_number = 2;
-        public Create(Environment env,Int64 Id, int Num, Distribution dist,List<Int64> EntityAmount = null) : base(env,Id) {
+        public Create(Environment env,Int64 Id, int Num, Distribution dist,List<Int64> EntityAmount = null,List<double> CumulativeNext=null) : base(env,Id,CumulativeNext) {
             this.Number_Of_Entities = Num;
             this.Actor_Type = Actor.AType.Create;
             this.Create_Distribution = dist;
@@ -32,8 +32,7 @@ namespace SimExpert
             E.Arrival_Time = Env.System_Time;
             E.Delay = TimeSpan.FromSeconds(0);
             Console.WriteLine(string.Format("Entity {0} entered the system at {1}", E.Id, Env.Seconds_From));
-            Actor NextActor = Env.Sim_Actors[Next_AID.First().Value];
-            NextActor.GenerateEvent(E);
+            base.CallNext(E);
             if (current_number <= Number_Of_Entities)
             {
                 Entity en = new Entity();

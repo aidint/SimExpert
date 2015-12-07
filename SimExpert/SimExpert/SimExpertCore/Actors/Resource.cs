@@ -8,7 +8,9 @@ namespace SimExpert
 {
     public class Resource : Actor
     {
-        public Resource(Environment env, Int64 Id, int Capacity, Distribution dist,Queue Queue = null) : base(env, Id) { 
+        public Resource(Environment env, Int64 Id, int Capacity, Distribution dist, Queue Queue = null, List<double> CumulativeNext = null)
+            : base(env, Id, CumulativeNext)
+        { 
             this.Capacity = Capacity;
             this.Activity_Distribution = dist;
             this.Statistics = new ResourceStatistic();
@@ -28,8 +30,7 @@ namespace SimExpert
         public Distribution Activity_Distribution { get; set; }
         public override void Process(Event.Type T, Entity E,Actor C = null)
         {
-            Actor NextActor = Env.Sim_Actors[Next_AID.First().Value];
-            NextActor.GenerateEvent(E);
+            base.CallNext(E);
 
             Seized--;
             Check_Busy();
@@ -40,6 +41,7 @@ namespace SimExpert
         }
         public override void GenerateEvent(Entity E)
         {
+            E.statistic.TestService = this.AID;
             Check_Busy();
 
             if (this.Is_Idle && (this.RQueue.Queue_Length == 0 || this.RQueue.Head_Entity == E))

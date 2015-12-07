@@ -30,21 +30,23 @@ namespace SimExpert
             //chain.run();
             ///////
             //Inventory Sample
-            Samples.InventorySample inv = new Samples.InventorySample();
-            Dictionary<string, int> dict = new Dictionary<string, int>();
-            for (int i = 0; i < 15; i++)
-                dict.Add((20 * i).ToString() + "-" + (20 * (i + 1)).ToString(), 0);
-            List<string> keys = dict.Keys.ToList();
-            double sum = 0;
-            for (int i = 0; i < 400; i++)
-            {
-                double a = inv.run();
-                sum += a;
-                int j = (int)a / 20;
-                dict[keys[j]] = dict[keys[j]] + 1;
+            //Samples.InventorySample inv = new Samples.InventorySample();
+            //Dictionary<string, int> dict = new Dictionary<string, int>();
+            //for (int i = 0; i < 15; i++)
+            //    dict.Add((20 * i).ToString() + "-" + (20 * (i + 1)).ToString(), 0);
+            //List<string> keys = dict.Keys.ToList();
+            //double sum = 0;
+            //for (int i = 0; i < 400; i++)
+            //{
+            //    double a = inv.run();
+            //    sum += a;
+            //    int j = (int)a / 20;
+            //    dict[keys[j]] = dict[keys[j]] + 1;
 
-            }
-            sum = sum / 400;
+            //}
+            //sum = sum / 400;
+            Samples.SimpleProbShare sps = new Samples.SimpleProbShare();
+            sps.run();
             Console.Read();
             //
             

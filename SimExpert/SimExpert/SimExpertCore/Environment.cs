@@ -74,7 +74,7 @@ namespace SimExpert
                 w.WriteLine("Id,Arrival,InterArrival,Departure,Delay,Service");
                 foreach (StatisticObj s in statistics)
                 {
-                    w.WriteLine(s.EntityId.ToString() + "," + s.Arrival.ToString() + "," + s.InterArrival + "," + s.Departure + "," + s.TotalQueueDelay + "," + s.TotalResourceDelay);
+                    w.WriteLine(s.EntityId.ToString() + "," + s.Arrival.ToString() + "," + s.InterArrival + "," + s.Departure + "," + s.TotalQueueDelay + "," + s.TotalResourceDelay + "," + s.TestService);
                 }
 
             }

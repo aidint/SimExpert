@@ -82,6 +82,7 @@ namespace SimExpert
         {
             get { return ResourceDelays.Count == 0 ? 0 : ResourceDelays.Values.Sum(); }
         }
-                
+
+        public Int64 TestService { get; set; }//Remove Later
     }
 }
