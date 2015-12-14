@@ -15,9 +15,9 @@ namespace SimExpert.Samples
             //
             List<double> valueList = new List<double>() { 1, 2, 3, 4, 5 };
             List<double> distribution = new List<double>() { 0.5, 0.6, 0.7, 0.8, 1.0 };
-            Discrete discrete = new Discrete(valueList, distribution, 0);
+            Discrete discrete = new Discrete(valueList, distribution);
             //
-            Uniform uniform = new Uniform(1, 3, 0);
+            Uniform uniform = new Uniform(1, 3);
             Distribution CreateDist = new Distribution(discrete);
             Distribution ResDist = new Distribution(uniform);
 

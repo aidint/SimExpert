@@ -9,5 +9,6 @@ namespace SimExpert.Samples
     public abstract class Sample
     {
         public abstract Statistics run();
+        
     }
 }

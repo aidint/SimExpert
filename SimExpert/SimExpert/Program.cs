@@ -20,7 +20,8 @@ namespace SimExpert
             /////////
             //Simple Shared Queue
             //Samples.SimpleSharedQueue ssd = new Samples.SimpleSharedQueue();
-            //ssd.run();
+            //for (int i = 0; i <= 20;i++ )
+            //    ssd.run();
             //Able and Baker
             //Samples.AbleBaker ab = new Samples.AbleBaker();
             //ab.run();
@@ -45,10 +46,16 @@ namespace SimExpert
 
             //}
             //sum = sum / 400;
-            Samples.SimpleProbShare sps = new Samples.SimpleProbShare();
-            sps.run();
-            Console.Read();
+            //Samples.SimpleProbShare sps = new Samples.SimpleProbShare();
+            //sps.run();
+            //Console.Read();
             //
+            for (int i = 0; i <= 20; i++)
+            {
+                Uniform un = new Uniform(0.86, 1.56);
+                Console.WriteLine(un.NextDouble());
+            }
+            Console.ReadLine();
             
         }
 

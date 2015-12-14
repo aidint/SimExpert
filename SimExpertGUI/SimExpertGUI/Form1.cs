@@ -25,6 +25,8 @@ namespace SimExpertGUI
             string[] Samples = new string[] { "Able&Baker", "Chain", "Inventory", "Decide", "Probability Share", "Shared Queue", "Simple Simulation" };
             comboBox1.Items.AddRange(Samples);
             comboBox1.Text = "Choose a code";
+            comboBox1.SelectedIndex = 2;
+            textBox1.Text = "10";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,7 +64,9 @@ namespace SimExpertGUI
             }
             List<Statistics> Stats = new List<Statistics>();
             for (int i = 0; i < NumberOfSimulations; i++)
+            {
                 Stats.Add(sample.run());
+            }
 
             ChartSelection cs = new ChartSelection(Stats,this);
             cs.Show();

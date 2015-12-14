@@ -38,7 +38,29 @@ namespace SimExpertGUI
 
         private void button2_Click(object sender, EventArgs e)
         {
+            List<double> AverageDelayOverall = Stats.Select(t => t.EntityStatistics.Average(z => z.TotalQueueDelay)).ToList();
+            Tuple<string, string> Data = new Tuple<string, string>("Average Delay Overall", AverageDelayOverall.Average(t => t).ToString());
+            ChartForm cf = new ChartForm(AverageDelayOverall, "Average Delay", Data);
+            cf.Show();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Dictionary<string, long> dict = new Dictionary<string, long>();
+            for (int i = 0; i <= 11; i++) dict.Add((i * 20).ToString(), 0);
+            var holder = Stats.Select(t => t.InventoryStatistics).ToList();
+            var holder2 = holder.Select(t => t[0].OtherStatistics).ToList();
+            double sum = 0;
+            foreach (var x in holder2)
+            {
+                var holder3 = x.Select(t => t.Value).ToList();
+                double Profit = holder3.Select(t => t.Last()).Sum(t=>(double) t.StatisticValue);
+                sum += Profit;
+                dict[(((int)Profit / 20)*20).ToString()] += 1;
+            }
+            Tuple<string,string> Data = new Tuple<string,string>("Average Profit",(sum/holder2.Count).ToString());
+            ChartForm cf = new ChartForm(dict, "Bin Frequencies", Data);
+            cf.Show();
         }
     }
 }

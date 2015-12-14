@@ -5,10 +5,10 @@ using System;
 namespace SimExpert
 {
   public class SystemRandom : IRandom {
-    protected Random random;
+    public static Random random = new Random();
 
     public SystemRandom() {
-      random = new Random();
+        
     }
 
     public SystemRandom(int seed) {

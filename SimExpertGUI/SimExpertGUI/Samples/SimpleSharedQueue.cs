@@ -13,10 +13,10 @@ namespace SimExpert.Samples
             Environment env = new Environment();
 
             //dist
-            Uniform d = new Uniform(1, 1, 0);
+            Uniform d = new Uniform(1, 4);
 
             //dist1
-            Uniform n = new Uniform(5, 5, 0);
+            Uniform n = new Uniform(5, 8);
             Distribution dist = new Distribution(d);
             Distribution dist1 = new Distribution(n);
 

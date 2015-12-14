@@ -13,13 +13,13 @@ namespace SimExpert.Samples
             Environment env = new Environment();
 
             //dist for Create 
-            Uniform CreateDist = new Uniform(1, 5, 0);
+            Uniform CreateDist = new Uniform(1, 5);
 
             //dist for Able
-            Uniform AbleDist = new Uniform(4, 6, 0);
+            Uniform AbleDist = new Uniform(4, 6);
 
             //dist for Baker
-            Uniform BakerDist = new Uniform(2, 5, 0);
+            Uniform BakerDist = new Uniform(2, 5);
 
             Distribution DistCreate = new Distribution(CreateDist);
             Distribution DistAble = new Distribution(AbleDist);
